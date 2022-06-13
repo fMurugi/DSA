@@ -1,17 +1,18 @@
 package prac.binaryTree;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Stack;
+import javax.swing.tree.TreeNode;
+import java.util.*;
 
 public class BTree {
     static Node root;
+
+
 
     class Node{
         int data;
         Node left;
         Node right;
+        Node parent;
 
         public Node(int data) {
             this.data = data;
@@ -34,6 +35,13 @@ public class BTree {
         second.right = fifth;
         third.left = sixth;
         third.right = seventh;
+        first.parent=null;
+        second.parent=first;
+        third.parent = first;
+        fourth.parent=second;
+        fifth.parent=second;
+        sixth.parent= third;
+        seventh.parent = third;
 
     }
 
@@ -103,6 +111,21 @@ public class BTree {
         }
         return results;
     }
+    public static boolean isRoot(Node v){
+        if(v.parent==null){
+            return true;
+        }
+        return false;
+    }
+    public static  int depth(Node v){
+        if(isRoot(v)){
+            return 0;
+        }
+        return 1+depth(parent(v));
+    }
+    public static Node parent(Node v){
+        return v.parent;
+    }
     public static void main(String[]args){
         BTree tree = new BTree();
         tree.createTree();
@@ -119,4 +142,6 @@ public class BTree {
         System.out.println(tree.findMax(root));
 
     }
+
+
 }

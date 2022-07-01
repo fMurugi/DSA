@@ -9,7 +9,8 @@ public class CyclicSort {
 
             int correctIndex = arr[i]-1; //value -1;
 
-            if(arr[i]!=arr[correctIndex]){
+            if(arr[i]!=arr[correctIndex]){ //if number is not equal to
+                //ht number at its correct index swap
                 //swap
                 int temp = arr[i];
                 arr[i]=arr[correctIndex];

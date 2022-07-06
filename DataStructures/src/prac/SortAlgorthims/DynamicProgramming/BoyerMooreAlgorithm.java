@@ -2,10 +2,12 @@ package prac.SortAlgorthims.DynamicProgramming;
 
 import java.util.Hashtable;
 
+import static java.lang.String.*;
+
 public class BoyerMooreAlgorithm {
     public static void main(String[] args) {
-        String pattern ="this is a test";
-        String text = "test";
+        String text ="this is a test to be done";
+        String pattern = "test";
         System.out.println( patternMatching(pattern,text));
 
     }
@@ -15,35 +17,34 @@ public class BoyerMooreAlgorithm {
         int lengthofPattern = pattern.length();
 
         int lengthOfText = text.length();
+        int m = lengthofPattern;
+        int n=lengthOfText;
+        int i = m-1;
+        int j = m-1;
         int numOfSkips=0;
 
         if(pattern.length()>text.length()){
             return -1;
         }
-
-        for (int i =0;i<=lengthOfText - lengthofPattern;i+=numOfSkips){
-            numOfSkips = 0;
-            for(int j = lengthofPattern-1;j>=0;j--){
-                if(pattern.charAt(j)!=text.charAt(i+j)){
-
-                    //if the letter in text exist in the pattern
-                    if(mistmatchTable.get(text.charAt(i+j))!=null){
-                        numOfSkips = mistmatchTable.get(text.charAt(i+j));
-                    }else{
-                        numOfSkips = lengthofPattern;
-                        break;
-                    }
-                }
+        do{
+            if(pattern.charAt(j)==text.charAt(i)){
                 if(j==0){
                     return i;
                 }
-                break;
+                else{
+                    i--;
+                    j--;
 
+                }
             }
-            return i;
+            else{
+                i=lengthofPattern-1-pattern.indexOf(i);
+                j=m-1;
+            }
+        }while(i<=n-1);
 
-        }
         return -1;
+
     }
     public  static Hashtable<Character, Integer> badmatchTable(String pattern){
         Hashtable<Character,Integer> mistmatchTable =new Hashtable();

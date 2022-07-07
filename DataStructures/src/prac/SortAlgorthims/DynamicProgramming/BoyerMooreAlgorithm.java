@@ -38,7 +38,7 @@ public class BoyerMooreAlgorithm {
                 }
             }
             else{
-                i=lengthofPattern-1-pattern.indexOf(i);
+//                i=i+m-Math.min(j,1+); ???
                 j=m-1;
             }
         }while(i<=n-1);

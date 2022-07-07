@@ -41,7 +41,7 @@ public class BoyerMooreAlgo {
     public static void main(String[] args) {
         String pattern = "test";
         String text = "this is a test done ";
-        System.out.println(BoyerMatch(pattern,text));
+        System.out.println("The word test was found at index "+BoyerMatch(pattern,text));
 
     }
 }

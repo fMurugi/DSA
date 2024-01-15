@@ -1,0 +1,10 @@
+
+{	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(şÕÏÆûÿÿÿÿ8éğèÕ1
+o
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8ğğèÕ1
+b
+java:S1612"@Replace this lambda with method reference 'String::toUpperCase'.(“õ·Òøÿÿÿÿ8òğèÕ1
+T	java:S106"9Replace this use of System.out or System.err by a logger.(Ø†—{8òğèÕ1
+o
+java:S6204"RReplace this usage of 'Stream.collect(Collectors.toList())' with 'Stream.toList()'(ª™¨¹8ü”êÕ1
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(«±ó¸ùÿÿÿÿ8ôğèÕ1
